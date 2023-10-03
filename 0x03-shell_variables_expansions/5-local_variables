@@ -1,2 +1,2 @@
 #!/bin/bash
-printenv alias
+alias ;printenv |grep PATH
