@@ -1,16 +1,12 @@
 #!/usr/bin/env bash
 # print "Best School" 10 times
 hour=0
-while ((hour<13)); do
+while ((hour < 13)); do
 	min=1
-	((hour++))
+	echo "Hour: "$hour
 	while ((min<60)); do
 		echo $min
 		((min++))
 	done
-	if ((hour==13)); then
-		break
-	fi
-	echo "Hour: "$hour
-
+	((hour++))
 done
