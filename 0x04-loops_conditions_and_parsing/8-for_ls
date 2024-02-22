@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Bash script that displays/prints content
+for obj in *; do
+	echo "$obj" | cut -d '-' -f 2
+done
