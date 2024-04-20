@@ -1,3 +1,9 @@
+
+file { '/tmp':
+  ensure => 'directory',
+}
+
+
 file { '/tmp/school':
   mode    => '0744',
   owner   => 'www-data',
