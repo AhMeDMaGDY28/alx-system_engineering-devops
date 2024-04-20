@@ -1,3 +1,4 @@
+# Using Puppet, create a file in /tmp.
 
 file { '/tmp':
   ensure => 'directory',
