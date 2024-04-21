@@ -6,7 +6,7 @@ user = "ubuntu"
 # the private key var not recommanded
 private_key = "~/.ssh/school"
 # the ip or the localhost var
-localhost = '8.8.8.8'
+localhost = '54.237.107.23'
 
 # the script is here:
 ssh -i $private_key $user@$localhost
