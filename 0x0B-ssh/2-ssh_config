@@ -1,7 +1,9 @@
-#!/usr/bin/env bash
+# ssh_config
 
-# A Bash script that creates an RSA key pair.
-# ssh-keygen [-t dsa | ecdsa | ecdsa-sk | ed25519 | ed25519-sk | rsa]
-# ssh-keygen [-b bits] [-f output_keyfile] [-N new_passphrase]
+Host *
 
-ssh-keygen -b 4096 -t rsa -f school -N "betty"
+  PasswordAuthentication no
+  IdentityFile ~/.ssh/school
+  Port 22
+  HostName 54.237.107.23
+  User ubuntu
