@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+# this code is made to making connecting to any server easy
+
+# the user var
+user = "ubuntu"
+# the private key var not recommanded
+private_key = "~/.ssh/school"
+# the ip or the localhost var
+localhost = '8.8.8.8'
+
+# the script is here:
+ssh -i $private_key $user@$localhost
