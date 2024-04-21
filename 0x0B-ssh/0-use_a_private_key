@@ -2,11 +2,11 @@
 # this code is made to making connecting to any server easy
 
 # the user var
-user = "ubuntu"
+server_name="ubuntu"
 # the private key var not recommanded
-private_key = "~/.ssh/school"
+private_key="~/.ssh/school"
 # the ip or the localhost var
-localhost = '54.237.107.23'
+localhost='54.237.107.23'
 
 # the script is here:
-ssh -i $private_key $user@$localhost
+ssh -i "$private_key" "$server_name"@"$localhost"
