@@ -9,4 +9,4 @@ private_key="~/.ssh/school"
 localhost="54.237.107.23"
 
 # the script is here:
-ssh -i $private_key "$server_name"@"$localhost"
+ssh -i "$private_key" "$server_name"@"$localhost"
