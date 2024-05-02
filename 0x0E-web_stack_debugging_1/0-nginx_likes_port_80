@@ -7,5 +7,4 @@ sudo apt-get -y install nginx
 
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 
-# Restart Nginx service to apply the changes
-sudo systemctl restart nginx
+sudo service nginx start
