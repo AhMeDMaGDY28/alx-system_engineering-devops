@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 # a code to fix the proplem in the code
 
+
 # Update package lists and install Nginx
 sudo apt-get -y update
 sudo apt-get -y install nginx
 
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 
+# Start nginx service to apply the changes
 sudo service nginx start
