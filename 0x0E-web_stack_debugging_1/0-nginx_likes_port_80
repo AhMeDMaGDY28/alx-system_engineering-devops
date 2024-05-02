@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# a code to fix the proplem in the code
+
+# Update package lists and install Nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+# Get the IPv4 address of the server
+ipv4_address=$(hostname -I | cut -d ' ' -f1)
+
+# Configure Nginx to listen on port 80 and bind to the server's IPv4 address
+sudo bash -c "cat > /etc/nginx/sites-available/default << EOF
+server {
+    listen 80;
+    listen ${ipv4_address}:80;
+    server_name _; # Listen on all server names
+    root /var/www/html; # Default document root
+    index index.html index.htm index.nginx-debian.html;
+    location / {
+        try_files \$uri \$uri/ =404;
+    }
+}
+EOF"
+
+# Restart Nginx service to apply the changes
+sudo systemctl restart nginx
