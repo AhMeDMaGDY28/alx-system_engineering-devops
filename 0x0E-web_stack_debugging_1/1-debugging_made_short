@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# a code to fix the proplem in the code
+sudo apt-get -y install nginx
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+sudo service nginx start
