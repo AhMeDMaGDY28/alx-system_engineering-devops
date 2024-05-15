@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# getting into the mysql
+sudo mysql -p2849
+# making the database
+CREATE DATABASE IF NOT EXISTS tyrell_corp;
+# to make sure that iam in the database i want
+USE tyrell_corp;
+# to create the table
+CREATE TABLE IF NOT EXISTS nexus6(
+        id int,
+        name varchar(50)
+);
+# making sure the data is there
+SHOW DATABASES;
+USE tyrell_corp;
+DESCRIBE nexus6;
+# insert into the table
+INSERT INTO nexus6
+VALUES(1, 'ahmedmagdy');
+# watching the data in the table
+USE tyrell_corp;
+SELECT * FROM nexus6;
