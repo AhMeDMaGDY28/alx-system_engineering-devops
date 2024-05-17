@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # a script to change the user
 su - $1
+echo $1
 whoami
