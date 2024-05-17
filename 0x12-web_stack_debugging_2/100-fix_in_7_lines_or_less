@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# a code to improve security
+# a script to improve secuirty
 pkill apache2
 chown nginx:nginx /etc/nginx/nginx.conf
 chmod 777 /etc/nginx/nginx.conf
