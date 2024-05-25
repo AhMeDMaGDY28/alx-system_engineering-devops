@@ -1,8 +1,8 @@
-from sys import argv, exit
-import requests
-
 #!/usr/bin/python3
 """hello"""
+
+import requests
+from sys import argv, exit
 
 
 if len(argv) != 2:
@@ -14,7 +14,8 @@ if __name__ == "__main__":
 
     try:
         # employee data
-        employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
+        employee_url = f"\
+        https: // jsonplaceholder.typicode.com/users/{employee_id}"
         employee_data = requests.get(employee_url).json()
         employee_name = employee_data.get('name')
 
@@ -29,7 +30,8 @@ if __name__ == "__main__":
         num_done_tasks = len(done_tasks)
 
         print(
-            f"Employee {employee_name} is done with tasks ({num_done_tasks}/{total_tasks}):")
+            f"Employee {employee_name} is done with tasks\
+                ({num_done_tasks}/{total_tasks}):")
 
         for task in to_do_list_data:
             print(f"\t{task.get('title')}")
