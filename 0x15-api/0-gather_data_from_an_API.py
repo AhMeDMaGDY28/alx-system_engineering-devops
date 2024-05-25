@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This script gathers data from an API for a given employee ID.
-The script takes an employee ID as a command-line argument and makes 
+The script takes an employee ID as a command-line argument and makes
 API requests to retrieve the employee's data and their to-do list.
 It then prints out the employee's name, the number of completed tasks,
 and the list of completed tasks.
