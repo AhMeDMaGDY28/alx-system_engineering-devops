@@ -8,19 +8,18 @@ from sys import argv
 import json
 
 if __name__ == "__main__":
-    try:
-        id = argv[1]
-        url = "https://jsonplaceholder.typicode.com/"
-        user = requests.get(url + f"user/{id}").json()
-        username = user.get("username")
-        todo = requests.get(url + "todos", params={"userId": id}).json()
-        data = {
-            id: [{
-                "task": task.get("title"),
-                "completed": task.get("completed"),
-                "username": username
-            } for task in todo
-            ]}
-        json_data = json.dumps(data, indent=4)
-        with open(f"{id}.json", mode="w", newline='') as json_file:
-            json_file.write(json_data)
+    id = argv[1]
+    url = "https://jsonplaceholder.typicode.com/"
+    user = requests.get(url + f"user/{id}").json()
+    username = user.get("username")
+    todo = requests.get(url + "todos", params={"userId": id}).json()
+    data = {
+        id: [{
+            "task": task.get("title"),
+            "completed": task.get("completed"),
+            "username": username
+        } for task in todo
+        ]}
+    json_data = json.dumps(data, indent=4)
+    with open(f"{id}.json", mode="w", newline='') as json_file:
+        json_file.write(json_data)
