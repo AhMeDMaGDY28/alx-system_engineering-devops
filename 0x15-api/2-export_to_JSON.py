@@ -16,11 +16,11 @@ if __name__ == "__main__":
 
     data = {
         id: [
-                {
-                    "task": task.get("title"),
-                    "completed": task.get("completed"),
-                    "username": username
-                } for task in todo
+            {
+                "task": task.get("title"),
+                "completed": task.get("completed"),
+                "username": username
+            } for task in todo
         ]
     }
 
