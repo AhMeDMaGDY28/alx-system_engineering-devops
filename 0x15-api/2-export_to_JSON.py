@@ -25,7 +25,7 @@ if __name__ == "__main__":
                     "username": username
                 } for task in todo
             ]}
-        json_data = json.dumps(data)
+        json_data = json.dumps(data, indent=4)
         with open(f"{id}.json", mode="w", newline='') as json_file:
             json_file.write(json_data)
 
