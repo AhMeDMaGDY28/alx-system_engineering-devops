@@ -3,28 +3,27 @@
 and exports the TODO list to a CSV file.
 Usage: python3 script.py <employee_id>
 """
-import json
 import requests
-import sys
+from sys import argv
+import json
 
 if __name__ == "__main__":
-    url = "https://jsonplaceholder.typicode.com/"
-    id = sys.argv[1]
-    user = requests.get(url + "users/{}".format(id)).json()
-    username = user.get("username")
-    todo = requests.get(url + "todos", params={"userId": id}).json()
+    try:
+        id = argv[1]
+        url = "https://jsonplaceholder.typicode.com/"
+        user = requests.get(url + f"user/{id}").json()
+        username = user.get("username")
+        todo = requests.get(url + "todos", params={"userId": id}).json()
+        data = {
+            id: [{
+                    "task": task.get("title"),
+                    "completed": task.get("completed"),
+                    "username": username
+                } for task in todo
+            ]}
+        json_data = json.dumps(data)
+        with open(f"{id}.json", mode="w", newline='') as json_file:
+            json_file.write(json_data)
 
-    data = {
-        id: [
-            {
-                "task": task.get("title"),
-                "completed": task.get("completed"),
-                "username": username
-            } for task in todo
-        ]
-    }
-
-    jsonData = json.dumps(data, indent=4)
-
-    with open(f"{id}.json", "w", newline="") as file:
-        file.write(jsonData)
+    except Exception:
+        print("error in the body")
