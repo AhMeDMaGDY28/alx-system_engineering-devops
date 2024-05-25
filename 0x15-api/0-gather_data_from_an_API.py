@@ -10,7 +10,7 @@ if len(argv) != 2:
     exit(1)
 
 if __name__ == "__main__":
-    employee_id = argv[1]
+    employee_id = int(argv[1])
 
     try:
         # employee data
