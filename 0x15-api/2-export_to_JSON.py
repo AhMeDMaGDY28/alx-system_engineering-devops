@@ -16,10 +16,10 @@ if __name__ == "__main__":
         todo = requests.get(url + "todos", params={"userId": id}).json()
         data = {
             id: [{
-                    "task": task.get("title"),
-                    "completed": task.get("completed"),
-                    "username": username
-                } for task in todo
+                "task": task.get("title"),
+                "completed": task.get("completed"),
+                "username": username
+            } for task in todo
             ]}
         json_data = json.dumps(data)
         with open(f"{id}.json", mode="w", newline='') as json_file:
