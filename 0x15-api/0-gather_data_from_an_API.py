@@ -10,6 +10,7 @@ import requests
 from sys import argv, exit
 
 
+
 if len(argv) != 2:
     print("Usage: python3 script.py <employee_id>")
     exit(1)
