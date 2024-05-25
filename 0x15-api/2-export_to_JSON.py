@@ -22,7 +22,7 @@ if __name__ == "__main__":
         ]
     }
 
-    jsonData = json.dumps(data, indent=4)
+    jsondata = json.dumps(data, indent=4)
 
     with open(f"{id}.json", "w", newline="") as file:
-        file.write(jsonData)
+        file.write(jsondata)
