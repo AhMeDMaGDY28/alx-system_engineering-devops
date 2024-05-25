@@ -31,7 +31,7 @@ if __name__ == "__main__":
 
         print(
             f"Employee {employee_name}\
-                is done with tasks({done_tasks}/{total_tasks}):"
+                is done with tasks({num_done_tasks}/{total_tasks}):"
         )
 
         for task in done_tasks:
